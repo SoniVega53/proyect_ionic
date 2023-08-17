@@ -1,0 +1,48 @@
+<body>
+    <div class="ion-page">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-buttons slot="start">
+                    <ion-back-button default-href=""></ion-back-button>
+                </ion-buttons>
+                <ion-title>Reservarciones</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button routerLink="/home">  <ion-icon name="home-outline"></ion-icon> </ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content>
+            <ion-text color="secondary">
+                <h2>Reservar Viaje:</h2>
+            </ion-text>
+
+            <div class="content-reservation">
+                <img alt="Silhouette of mountains" [src]="journeySelect?.placeDes?.idImage?.url" class="rounded-circle" />
+                <p >Disponible: {{journeySelect?.journey?.count}} Personas</p>
+                <ion-text color="tertiary">
+                    <h2>{{journeySelect?.placeDes?.namePlace}}</h2>
+                </ion-text>
+
+                <ion-input label="Observaciones" label-placement="floating" fill="outline" type="text"
+                    placeholder="Observaciones" [(ngModel)]="observation" name="observation"
+                    (input)="onInputChange()"></ion-input>
+                <br>
+                <ion-input label="Cantidad" label-placement="floating" fill="outline" type="number"
+                    placeholder="Cantidad" [(ngModel)]="count" name="count" (input)="onInputChange()"> </ion-input>
+                <br>
+                <ion-button expand="block" *ngIf="!idReservation" [disabled]="onInputChange()"
+                    (click)="reservation()">Reservar</ion-button>
+                <ion-button expand="block" *ngIf="idReservation" [disabled]="onInputChange()"
+                    (click)="reservation()">Actualizar</ion-button>
+            </div>
+
+
+        </ion-content>
+    </div>
+
+
+
+    <ion-alert [isOpen]="isAlertOpen" header="Error"  [message]="messageAlert"
+        [buttons]="alertButtons" (didDismiss)="setOpenAlert(false)"></ion-alert>
+</body>

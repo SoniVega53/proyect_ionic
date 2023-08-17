@@ -1,0 +1,42 @@
+<body>
+    <main class="ajustCenter">
+        <ion-card class="content">
+            <ion-card-header>
+                <div class="ajustCenter">
+                    <ion-avatar>
+                        <img alt="Silhouette of a person's head"
+                            src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                    </ion-avatar>
+                </div>
+
+                <ion-card-title>
+                    <h2>Bienvenido</h2>
+                </ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                <ion-input label="Ingrese Correo" label-placement="floating" fill="outline" type="email"
+                    placeholder="Correo" [(ngModel)]="email" name="email" (input)="onInputChange()"></ion-input>
+                <br>
+                <ion-input label="Ingrese Contraseña" label-placement="floating" fill="outline" type="password"
+                    placeholder="Contraseña" [(ngModel)]="password" name="password"
+                    (input)="onInputChange()"></ion-input>
+                <br>
+                <ion-button expand="block" shape="round" [disabled]="onInputChange()" (click)="getUserLogin()"
+                    id="open-toast">Ingresar</ion-button>
+            </ion-card-content>
+
+            <div class="txt-register" routerLink="/register" routerDirection="root">
+                <ion-text color="tertiary">
+                    <p>Registrarse si no tienes cuenta</p>
+                </ion-text>
+            </div>
+
+            <ion-alert [isOpen]="isAlertOpen" header="Error"  message="Este Usuario no existe"
+                [buttons]="alertButtons" (didDismiss)="setOpen(false)"></ion-alert>
+        </ion-card>
+
+
+    </main>
+
+</body>

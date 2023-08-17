@@ -1,0 +1,8 @@
+h2{
+    text-align: center;
+}
+.text-status{
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+}

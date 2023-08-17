@@ -1,0 +1,48 @@
+<ion-text color="secondary">
+    <h2>Mis Reservaciones</h2>
+</ion-text>
+
+<div *ngIf="isNotReser()">
+    <ion-card *ngFor="let rest of reserList">
+        <ion-item lines="none" *ngIf="!isStatus(rest?.journey?.status)">
+            <ion-label slot="end" color="danger" class="text-status">{{ rest?.journey?.status}}</ion-label>
+        </ion-item>
+        <ion-card-header>
+            <ion-card-title>{{rest.place.namePlace}}</ion-card-title>
+            <ion-card-subtitle>Cantidad: {{rest.countPeople}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+
+                <ion-item>
+                    <ion-label>Inicia: {{ rest.journey.dateInitial | date:'MMM d, yyyy' }}</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Finaliza: {{ rest.journey.dateEnd | date:'MMM d, yyyy' }}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label>
+                        <h3>Observaciones:</h3>
+                        <p>{{rest.observations}}</p>
+                    </ion-label>
+                </ion-item>
+
+                <ion-item lines="none" *ngIf="isActiveButton(rest?.journey?.status)">
+                    <ion-button slot="end" size="small" color="danger"
+                        (click)="getCancelReservation(rest.id)">Cancelar</ion-button>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</div>
+
+
+<div class="ajustCenter" style="height: auto;" *ngIf="!isNotReser()">
+    <div>
+        <div>
+            <img src="../../../assets/images/empty.png" alt="">
+        </div>
+        <ion-label>No tiene reservaciones</ion-label>
+    </div>
+</div>

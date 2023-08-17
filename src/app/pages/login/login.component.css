@@ -1,0 +1,35 @@
+
+main {
+    height: 100vh;
+}
+
+body {
+    background-color: rgb(61, 60, 60);
+    background-image: url(../../../assets/images/carrucel-opacity5.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(10%);
+
+}
+
+.content {
+    width: 100%;
+    margin: 1rem;
+    max-width: 30rem;
+}
+
+h2 {
+    text-align: center;
+    margin: 5px !important;
+}
+
+.image {
+    left: 20% !important;
+}
+
+.txt-register{
+    margin-right: 1rem !important;
+    text-align: right;
+    text-decoration: underline;
+}

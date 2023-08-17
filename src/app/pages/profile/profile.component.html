@@ -1,0 +1,60 @@
+<body>
+    <div class="ion-page">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-buttons slot="start">
+                    <ion-back-button default-href=""></ion-back-button>
+                </ion-buttons>
+                <ion-title>{{nameInfo}}</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button routerLink="/home">  <ion-icon name="home-outline"></ion-icon> </ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content >
+            <main>
+                <div class="content-profile ">
+                    <div class="ajustCenter">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+
+                    <ion-text color="tertiary">
+                        <h3>{{email}}</h3>
+                    </ion-text>
+
+                    <br>
+                    <ion-input label="Nombre" label-placement="floating" fill="outline" placeholder="Nombre"
+                        [(ngModel)]="name" name="name" (input)="onInputChange()"></ion-input>
+                    <br>
+                    <ion-input label="Apellido" label-placement="floating" fill="outline" placeholder="Apellido"
+                        [(ngModel)]="lastname" name="lastname" (input)="onInputChange()"></ion-input>
+                    <br>
+                    <ion-input label="Teléfono" label-placement="floating" fill="outline" type="number"
+                        placeholder="Teléfono" [(ngModel)]="phone" name="phone" (input)="onInputChange()">
+                    </ion-input>
+                    <br>
+                    <ion-input label="Contraseña" label-placement="floating" fill="outline" type="password"
+                        placeholder="Contraseña" [(ngModel)]="password" name="password"
+                        (input)="onInputChange()"></ion-input>
+                    <br>
+                    <ion-input label="Ingrese su Contraseña" label-placement="floating" fill="outline" type="password"
+                        placeholder="Contraseña" [(ngModel)]="passwordAct" name="passwordAct"
+                        (input)="onInputChange()"></ion-input>
+                    <br>
+
+                    <ion-button expand="block" shape="round" id="open-toast" [disabled]="onInputChange()"
+                        (click)="update()">Actualizar</ion-button>
+
+                    <ion-alert [isOpen]="isAlertOpen" header="Contraseña Incorrecta"
+                        message="Para poder Actualizar necesita ingresar su Contraseña correctamente"
+                        [buttons]="alertButtons" (didDismiss)="setOpen(false)"></ion-alert>
+
+                    <ion-toast [isOpen]="isToastOpen" message="Se actualizo correctamente" [duration]="5000"
+                        (didDismiss)="setOpen(false)"></ion-toast>
+                </div>
+            </main>
+        </ion-content>
+    </div>
+
+</body>

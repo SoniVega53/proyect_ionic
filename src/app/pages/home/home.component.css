@@ -1,0 +1,54 @@
+.icon-home {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 0.5rem;
+}
+
+.item-menu-button ion-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+
+h4 {
+    margin: 0.4rem;
+}
+
+ion-footer {
+    padding: 0.5rem;
+}
+
+ion-card{
+    margin: 0 1rem !important;
+    margin-top: 1rem !important;
+    max-height: 6.5rem;
+    max-width: 30rem;
+}
+
+.img-card{
+    width: 6.5rem;
+    height: 5rem;
+}
+.img-card img{
+    width: 100% !important;
+    height: 5rem;   
+}
+
+ion-card-header ion-card-subtitle{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+}
+
+.pagin-icon ion-icon{
+    width: 0.5rem;
+    height: 0.5rem;
+    
+}
+
+.pagin-icon{
+    padding: 0 !important;
+    padding-right: 0.2rem !important;
+}

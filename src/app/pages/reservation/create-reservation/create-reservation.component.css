@@ -1,0 +1,22 @@
+h2 {
+    margin: 1rem !important;
+    text-align: center;
+}
+
+.content-reservation {
+    margin: 1rem;
+}
+
+img {
+    border-radius: 22px 22px 22px 22px;
+    -webkit-border-radius: 22px 22px 22px 22px;
+    -moz-border-radius: 22px 22px 22px 22px;
+    height: 15rem;
+    width: 100%;
+
+}
+
+.content-reservation p {
+    text-align: center;
+    margin: 0;
+}

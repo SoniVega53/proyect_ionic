@@ -1,0 +1,53 @@
+<body>
+    <div class="ion-page">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-buttons slot="start">
+                    <ion-back-button default-href=""></ion-back-button>
+                </ion-buttons>
+                <ion-title>Anuncios</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button routerLink="/home">  <ion-icon name="home-outline"></ion-icon> </ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content class="ion-padding">
+            <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+                <ion-refresher-content></ion-refresher-content>
+            </ion-refresher>
+
+            <ion-text color="secondary">
+                <h2>Anuncios de viajes</h2>
+            </ion-text>
+            <ion-card *ngFor="let publ of publicitySelect">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="auto">
+                            <div class="img-card">
+                                <img alt="Silhouette of mountains" [src]="publ.idImage.url" />
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <ion-card-header>
+                                <div class="ajustCenter">
+                                    <ion-card-subtitle>{{publ.description}} </ion-card-subtitle>
+                                </div>
+                            </ion-card-header>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+
+            <div class="ajustCenter" style="height: auto;" *ngIf="!isEmpty()">
+                <div>
+                    <div>
+                        <img src="../../../assets/images/empty.png" alt="">
+                    </div>
+                    <ion-label>No hay Anuncios</ion-label>
+                </div>
+            </div>
+        </ion-content>
+    </div>
+
+</body>

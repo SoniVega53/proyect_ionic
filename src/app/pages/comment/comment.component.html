@@ -1,0 +1,55 @@
+<body>
+    <div class="ion-page">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-buttons slot="start">
+                    <ion-back-button default-href=""></ion-back-button>
+                </ion-buttons>
+                <ion-title>Comentarios</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button routerLink="/home">  <ion-icon name="home-outline"></ion-icon> </ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content>
+
+            <ion-card>
+                <img alt="Image" [src]="journeysSelect?.placeDes?.idImage?.url" class="image-card-journey" />
+                <ion-card-header>
+                    <ion-card-title>{{journeysSelect?.placeDes?.namePlace}}</ion-card-title>
+                    <ion-card-subtitle>{{journeysSelect?.placeOri?.namePlace}}</ion-card-subtitle>
+                </ion-card-header>
+
+            </ion-card>
+
+            <div class="input-card-com">
+                <ion-card-content>
+                    <ion-card-title>Comentario:</ion-card-title>
+                    <ion-input label="Comentar" label-placement="floating" fill="outline" placeholder="Comentar"
+                        [(ngModel)]="desComment" name="desComment" (input)="onInputChange()"></ion-input>
+
+                    <ion-item lines="none">
+                        <ion-button slot="end" size="small" color="primary" [disabled]="onInputChange()"
+                            (click)="comment()">Enviar</ion-button>
+                    </ion-item>
+                </ion-card-content>
+            </div>
+
+            <ion-card *ngFor="let com of commentList ">
+                <ion-card-header>
+                    <ion-card-title>{{com?.user?.name}}</ion-card-title>
+                    <ion-card-subtitle>{{com?.date}}</ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-item lines="none">
+                        <ion-label>
+                            <p>{{com?.description}}</p>
+                        </ion-label>
+                    </ion-item>
+                </ion-card-content>
+            </ion-card>
+        </ion-content>
+    </div>
+
+</body>

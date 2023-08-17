@@ -1,0 +1,11 @@
+.content-profile{
+    margin: 2rem;
+    max-width: 30rem;
+}
+.content-profile ion-text{
+    text-align: center;
+}
+.content-profile ion-icon{
+   width: 6rem;
+   height: 6rem;
+}

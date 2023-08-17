@@ -1,0 +1,37 @@
+ion-card{
+    margin: 1rem !important;
+    height: auto;
+    max-width: 30rem;
+}
+
+h2 {
+    margin: 1rem !important;
+    text-align: center;
+}
+h6{
+    font-size: 0.7rem;
+    margin: 0;
+}
+
+h5{
+    text-align: center;
+}
+
+.image-card-journey{
+    width: 100% !important;
+    height: 8rem;   
+}
+
+ion-card-header ion-card-subtitle{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp:3;
+    width:auto ;
+    height: auto;
+}
+
+ion-card-subtitle{
+    text-align: center;
+}

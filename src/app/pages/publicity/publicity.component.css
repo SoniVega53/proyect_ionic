@@ -1,0 +1,29 @@
+ion-card{
+    margin: 1rem !important;
+    max-height: 6.5rem;
+    max-width: 30rem;
+}
+
+h2 {
+    margin: 1rem !important;
+    text-align: center;
+}
+
+.img-card{
+    width: 6.5rem;
+    height: 5rem;
+}
+.img-card img{
+    width: 100% !important;
+    height: 5rem;   
+}
+
+ion-card-header ion-card-subtitle{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp:3;
+    width:auto ;
+    height: auto;
+}

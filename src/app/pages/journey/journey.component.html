@@ -1,0 +1,65 @@
+<body>
+    <div class="ion-page">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-buttons slot="start">
+                    <ion-back-button default-href=""></ion-back-button>
+                </ion-buttons>
+                <ion-title>Viajes</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button routerLink="/home">  <ion-icon name="home-outline"></ion-icon> </ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content class="ion-padding">
+            <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+                <ion-refresher-content></ion-refresher-content>
+            </ion-refresher>
+
+            <ion-text color="secondary">
+                <h2>Viajes Activos</h2>
+            </ion-text>
+
+            <ion-card *ngFor="let jor of journeysSelect">
+                <img alt="Image" [src]="jor.place.idImage.url" class="image-card-journey" />
+                <ion-card-header>
+                    <ion-text color="tertiary">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    <ion-card-subtitle color="">Partida:</ion-card-subtitle>
+                                    <ion-card-subtitle color="tertiary">{{ jor.journey.dateInitial | date:'MMM d, yyyy' }} </ion-card-subtitle>
+                                </ion-col>
+                                <ion-col>
+                                    <ion-card-subtitle color="">Regreso:</ion-card-subtitle>
+                                    <ion-card-subtitle color="tertiary">{{ jor.journey.dateEnd | date:'MMM d, yyyy' }} </ion-card-subtitle>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-text>
+                </ion-card-header>
+
+                <ion-card-content>
+                    <ion-text>
+                        <h5>{{jor.journey.description}} </h5>
+                    </ion-text>
+                </ion-card-content>
+
+                <ion-button fill="clear" [routerLink]="['/comment',jor.journey.id]">Comentarios</ion-button>
+                <ion-button fill="clear" [routerLink]="['/reservation/create/',jor.journey.id,jor.place.id]">Reservar</ion-button>
+            </ion-card>
+
+
+            <div class="ajustCenter" style="height: auto;" *ngIf="!isEmpty()">
+                <div>
+                    <div>
+                        <img src="../../../assets/images/empty.png" alt="">
+                    </div>
+                    <ion-label>No Hay Viajes Disponibles</ion-label>
+                </div>
+            </div>
+        </ion-content>
+    </div>
+
+</body>
